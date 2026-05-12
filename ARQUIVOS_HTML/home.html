@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyper Sense | Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo-area">
+                <i class="fas fa-brain"></i>
+                <span class="logo-text">Hyper<span class="sense">Sense</span></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <a href="index.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="usuarios.html"><i class="fas fa-users"></i><span>Usuários</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fas fa-chart-line"></i><span>Análises</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"><i class="fas fa-cog"></i><span>Configurações</span></a>
+                </li>
+            </ul>
+            <div class="nav-footer">
+                <div class="user-info">
+                    <img src="https://ui-avatars.com/api/?background=6C63FF&color=fff&name=Admin" alt="Avatar">
+                    <div>
+                        <p>Admin Hyper</p>
+                        <small>admin@hypersense.com</small>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                    <p>Bem-vindo ao Hyper Sense</p>
+                </div>
+                <div class="search-area">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar...">
+                </div>
+            </header>
+
+            <div class="welcome-card">
+                <div class="welcome-text">
+                    <h2>Olá, Admin!</h2>
+                    <p>Bem-vindo ao Hyper Sense - Seu sistema de gestão inteligente. Hoje é um ótimo dia para analisar dados e tomar decisões estratégicas!</p>
+                    <button class="btn-primary"><i class="fas fa-rocket"></i> Explorar Agora</button>
+                </div>
+                <div class="welcome-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total de Usuários</h3>
+                        <p class="stat-number" id="totalUsers">1.284</p>
+                        <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> +12%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Vendas Mensais</h3>
+                        <p class="stat-number">R$ 342K</p>
+                        <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> +8%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Visualizações</h3>
+                        <p class="stat-number">45.2K</p>
+                        <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> +23%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Taxa de Retenção</h3>
+                        <p class="stat-number">94%</p>
+                        <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> +5%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h3><i class="fas fa-bolt"></i> Acesso Rápido</h3>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="window.location.href='usuarios.html'">
+                        <i class="fas fa-user-plus"></i> Ver Usuários
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-chart-bar"></i> Relatórios
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-envelope"></i> Mensagens
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-calendar"></i> Agenda
+                    </button>
+                </div>
+            </div>
+
+            <div class="charts-section">
+                <div class="chart-card">
+                    <h4>Atividades Recentes</h4>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <i class="fas fa-user-check"></i>
+                            <div>
+                                <p>Novo usuário cadastrado</p>
+                                <small>Há 5 minutos</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <p>Aumento de 15% nas vendas</p>
+                                <small>Há 1 hora</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-database"></i>
+                            <div>
+                                <p>Backup concluído</p>
+                                <small>Há 2 horas</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h4>Distribuição de Acessos</h4>
+                    <div class="donut-stats">
+                        <div class="stat-percent">68% Desktop</div>
+                        <div class="stat-percent">22% Mobile</div>
+                        <div class="stat-percent">10% Tablet</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
