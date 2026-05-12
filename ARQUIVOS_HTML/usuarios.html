@@ -1,0 +1,36 @@
+<div class="animate-content">
+    <div class="users-header">
+        <div class="users-title">
+            <i class="bi bi-table"></i> Gerenciamento de Usuários
+        </div>
+        <button class="btn-primary-custom" onclick="window.abrirNovoUsuario()">
+            <i class="bi bi-person-plus-fill"></i> Novo Usuário
+        </button>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-custom table-hover align-middle" id="tabela-usuarios">
+            <thead>
+                <tr>
+                    <th>Nome Completo</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Tipo de Usuário</th>
+                    <th>Status</th>
+                    <th>Último Acesso</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="usuarios-table-body">
+               
+                <tr>
+                    <td colspan="7" class="text-center">Carregando usuários...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="mt-3 text-muted small" id="total-registros">
+        <i class="bi bi-info-circle"></i> Carregando...
+    </div>
+</div>
