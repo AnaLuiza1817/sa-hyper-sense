@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Cadastro de Sensores | SysGestor</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-chart-line me-2"></i>SysGestor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="usuarios.html"><i class="fas fa-users me-1"></i> Usuários</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-microchip me-1"></i> Sensores
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="sensores-cadastro.html"><i class="fas fa-plus me-2"></i>Cadastrar Sensor</a></li>
+                            <li><a class="dropdown-item" href="sensores-lista.html"><i class="fas fa-list me-2"></i>Listar Sensores</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-chart-bar me-1"></i> Relatórios</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="sensores-lista.html">Sensores</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Cadastro de Sensor</li>
+                    </ol>
+                </nav>
+
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-header bg-primary text-white rounded-top-4 py-3">
+                        <h3 class="card-title mb-0 fw-semibold">
+                            <i class="fas fa-microchip me-2"></i>Cadastrar Novo Sensor
+                        </h3>
+                        <p class="mb-0 small opacity-75">Preencha os dados abaixo para adicionar um novo sensor ao sistema</p>
+                    </div>
+                    
+                    <div class="card-body p-4 p-lg-5">
+                        <form id="formCadastroSensor">
+                            <div class="mb-4">
+                                <label for="nomeSensor" class="form-label fw-semibold">
+                                    <i class="fas fa-tag text-primary me-1"></i>Nome do Sensor *
+                                </label>
+                                <input type="text" class="form-control form-control-lg" id="nomeSensor" 
+                                       placeholder="Ex: Sensor de Temperatura - Sala 101" required>
+                                <div class="form-text">Nome descritivo para identificar o sensor facilmente.</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="tipoSensor" class="form-label fw-semibold">
+                                    <i class="fas fa-chart-line text-primary me-1"></i>Tipo de Sensor *
+                                </label>
+                                <select class="form-select form-select-lg" id="tipoSensor" required>
+                                    <option value="" selected disabled>Selecione o tipo...</option>
+                                    <option value="temperatura">Temperatura</option>
+                                    <option value="umidade">Umidade</option>
+                                    <option value="pressao">Pressão</option>
+                                    <option value="movimento"> Movimento/Presença</option>
+                                    <option value="luminosidade"> Luminosidade</option>
+                                    <option value="qualidade-ar">Qualidade do Ar</option>
+                                    <option value="vibracao">Vibração</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="localizacao" class="form-label fw-semibold">
+                                    <i class="fas fa-map-marker-alt text-primary me-1"></i>Localização *
+                                </label>
+                                <input type="text" class="form-control form-control-lg" id="localizacao" 
+                                       placeholder="Ex: Sala 201, Ala Sul, Prédio A" required>
+                                <div class="form-text">Onde este sensor está instalado?</div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label for="unidadeMedida" class="form-label fw-semibold">
+                                        <i class="fas fa-ruler text-primary me-1"></i>Unidade de Medida
+                                    </label>
+                                    <input type="text" class="form-control" id="unidadeMedida" 
+                                           placeholder="Ex: °C, %, hPa, lux">
+                                    <div class="form-text">Opcional</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="intervaloLeitura" class="form-label fw-semibold">
+                                        <i class="fas fa-clock text-primary me-1"></i>Intervalo de Leitura
+                                    </label>
+                                    <select class="form-select" id="intervaloLeitura">
+                                        <option value="1">1 segundo</option>
+                                        <option value="5">5 segundos</option>
+                                        <option value="10" selected>10 segundos</option>
+                                        <option value="30">30 segundos</option>
+                                        <option value="60">1 minuto</option>
+                                        <option value="300">5 minutos</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-4 mb-3 mb-md-0">
+                                    <label for="statusSensor" class="form-label fw-semibold">
+                                        <i class="fas fa-power-off text-primary me-1"></i>Status
+                                    </label>
+                                    <select class="form-select" id="statusSensor">
+                                        <option value="ativo" selected>Ativo</option>
+                                        <option value="inativo">Inativo</option>
+                                        <option value="manutencao">Em Manutenção</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3 mb-md-0">
+                                    <label for="valorMinimo" class="form-label fw-semibold">
+                                        <i class="fas fa-arrow-down text-primary me-1"></i>Valor Mínimo
+                                    </label>
+                                    <input type="number" class="form-control" id="valorMinimo" 
+                                           placeholder="Ex: 0" step="any">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="valorMaximo" class="form-label fw-semibold">
+                                        <i class="fas fa-arrow-up text-primary me-1"></i>Valor Máximo
+                                    </label>
+                                    <input type="number" class="form-control" id="valorMaximo" 
+                                           placeholder="Ex: 100" step="any">
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="descricao" class="form-label fw-semibold">
+                                    <i class="fas fa-file-alt text-primary me-1"></i>Descrição / Observações
+                                </label>
+                                <textarea class="form-control" id="descricao" rows="3" 
+                                          placeholder="Informações adicionais sobre o sensor..."></textarea>
+                            </div>
+
+                            <div class="d-flex gap-3 justify-content-end mt-4 pt-3 border-top">
+                                <button type="button" class="btn btn-secondary btn-lg px-4" onclick="limparFormulario()">
+                                    <i class="fas fa-eraser me-2"></i>Limpar
+                                </button>
+                                <button type="submit" class="btn btn-success btn-lg px-5">
+                                    <i class="fas fa-save me-2"></i>Cadastrar Sensor
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="alert alert-info mt-4" role="alert">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>Dica:</strong> Após cadastrar, o sensor aparecerá na lista de sensores. Você pode editá-lo a qualquer momento.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 SysGestor - Módulo de Sensores</p>
+            <small class="text-muted">Cadastro e gerenciamento de sensores IoT</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
